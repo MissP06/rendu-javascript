@@ -11,25 +11,31 @@ let ennemi={
     précision:0.4
 }
 
-function precision(précision){
-    if (Math.random<précision){
-        attaque=true
-        PJ=joueur.précision<precision
+function precision(personnage){ let x = Math.random()
+
+    if (x <personnage.précision){
+        return true 
     } else {
-        attaque=true
-        PE=ennemi.précision<precision
+        return false
     }
 console.log(ennemi.ptsDeVie);
 }
-function attaque(attaques){
-    if (PJ<precision){
-        PVE=ennemi.ptsDeVie - (ATTJ= joueur.attaque)
-        console.log("Le joueur a perdu 3 points de vie")
+function attaque(p1, p2){
+    if (precision(p1)==true){
+        p2.ptsDeVie -= p1.attaque
+        console.log(p1.nom+` a perdu de la vie`)
+
     } else {
-        PVJ=joueur.ptsDeVie - (ATTE = ennemi.attaque)
-        console.log("L'ennemi a perdu 2 points de vie")
+        console.log("il a raté le nul")
+
     }}
-Math.random()
+
+while(joueur.ptsDeVie>0 && ennemi.ptsDeVie>0){
+    attaque(joueur,ennemi)
+    attaque(ennemi,joueur)
+}
+
 console.log (joueur.ptsDeVie)
 while(joueur.ptsDeVie>0 && ennemi.ptsDeVie>0){
 }
+
